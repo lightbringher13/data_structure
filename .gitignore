@@ -3,7 +3,7 @@ __pycache__/
 *.pyc
 *.pyo
 
-# Virtual environment (if you create one)
+# Virtual environment
 Dvenv/
 
 # Environment variables
@@ -14,3 +14,18 @@ Dvenv/
 
 # OS-specific files
 .DS_Store
+Thumbs.db
+
+# IDE/editor-specific files
+.idea/
+.vscode/
+*.sublime-workspace
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Testing/build files
+.tox/
+.nox/
+coverage/
+*.cover
