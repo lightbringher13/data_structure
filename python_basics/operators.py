@@ -2,6 +2,7 @@
 print(4/2)
 print(2**3)
 print(5 % 2)
+print(5//3)
 
 # assignment
 bmi = 84 / (1.81 ** 2)
@@ -94,3 +95,6 @@ height = float(input("what is your height(m)? "))
 weight = int(input("what is your weight(kg)? "))
 bmi = weight / height ** 2
 print(round(bmi, 2))
+a = 3
+b = "string"
+print(a and b)
