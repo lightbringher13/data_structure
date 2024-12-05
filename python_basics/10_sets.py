@@ -6,6 +6,9 @@ set2 = {}
 print(type(set2))
 
 # set()
+# does not have index
+# sets are unordered collections
+# but mutable  can add,remove, modify
 set3 = set()
 print(type(set3))
 

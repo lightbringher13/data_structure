@@ -28,6 +28,7 @@ while lives > 0:
             print("you lose")
     else:
         # keep track of both index,element
+        # store index, value as a tuple
         for index, letter in enumerate(word):
             if letter == guessed_letter:
                 guess[index] = letter

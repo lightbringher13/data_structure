@@ -10,6 +10,7 @@ tuple1 = (12, 231, 34, 32, 1, "riss", "jenny", 23)
 print(tuple1[2:])
 
 # tuple is immutable not changable
+# tuple can not add, remove, modify its elements
 # tuple1[2] = 1
 
 # tuple support duplcate

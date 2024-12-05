@@ -1,4 +1,5 @@
 # character to number
+# ord(), The term “ordinal” refers to the position or rank of a character in the Unicode or ASCII table.
 import random
 char = 'a'
 print(ord(char))
@@ -10,6 +11,7 @@ char = "Z"
 print(ord(char))
 
 # number to character
+# chr(), The term “character” refers to a single symbol represented by a Unicode code point.
 number = 97
 print(chr(number))
 number = 122
@@ -50,9 +52,13 @@ symbols_selected = random.sample(symbols, int(symbols_num))
 password = letters_selected + numbers_selected + symbols_selected
 print(password)
 random.shuffle(password)
+print(password)
 
 # put list elements into string
 final_pw = ""
 for char in password:
     final_pw = final_pw + str(char)
 print(final_pw)
+
+# another way of list to string
+print("".join(final_pw))
