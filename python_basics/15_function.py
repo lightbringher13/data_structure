@@ -29,7 +29,7 @@ def greet(name, dept, age=30):  # age is default arguement. non-default is first
 greet("riss", "CS")
 
 # keyword arguements
-# greet(name="riss", "cs") always positional arguemnt
+# greet(name="riss", "cs") always positional arguemnt comes first
 greet("leo", dept="HR")
 
 # override default arguement
@@ -75,6 +75,7 @@ def add(name, *numbers):  # tuple (1, 2, 3, 4, 5, 56, 6, 90)
 add("riss", 1, 2, 3, 4, 5, 56, 6, 90)
 
 # arbitrary keyword arguement
+# stored as dictionary
 
 
 def info(**info):
