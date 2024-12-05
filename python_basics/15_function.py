@@ -1,4 +1,7 @@
+import math
 # simple function with no parameter
+
+
 def greet():
     print("hi")
     print("riss")
@@ -97,3 +100,41 @@ def multiply(*nums):
 
 multiply(2, 3, -6, 8)
 multiply(2, 5, 6, 8, 9)
+
+# coding exercise
+# how many cans do we need to paint the wall
+
+
+def No_cans(h, w, coverage):
+    no_cans = math.ceil((h*w)/coverage)  # need math library to round up ceil
+    print(f"number of cans needed to pain the wall {no_cans}")
+
+
+height = int(input("what is the height of the wall? "))
+width = int(input("what is the width of the wall? "))
+coverage = 7
+No_cans(height, width, coverage)
+
+# coding exercise
+# prime number or not
+
+
+def isPrime(n):
+    if n <= 1:
+        print(f"{n} is not a prime number")
+        return
+    divisors = []
+    # need math library
+    # prime number 2->sqrt(number) integers check divisible
+    for i in range(2, int(math.sqrt(n))+1):
+        if n % i == 0:
+            divisors.append(i)
+
+    if len(divisors) == 0:
+        print(f"{n} is prime number")
+    else:
+        print(f"{n} is divible by {divisors}")
+
+
+num = int(input("enter a number: "))
+isPrime(num)
