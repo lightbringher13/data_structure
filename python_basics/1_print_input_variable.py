@@ -1,7 +1,7 @@
 # \ to escape print
 print("it\'s a lovely day ")
 
-# """ """ you can use both ' and "
+# """ """ you can use both ' and " for multiline string like paragraph
 print(""" "it's a lovely day" """)
 
 # \n create space
