@@ -1,4 +1,4 @@
-# simple example of range()
+# simple example of range() works only with integers
 a = range(5)
 print(a[0])
 print(a[1])
@@ -20,7 +20,7 @@ for i in a:
 # coding exercise
 # sum until 100
 sum = 0
-for i in range(101):
+for i in range(101):  # exclude stop integer
     sum = i + sum
 print(sum)
 

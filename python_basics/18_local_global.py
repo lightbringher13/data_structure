@@ -18,7 +18,7 @@ def display():
     print(b)
 
 
-display()  # print global a -> 10
+display()  # print global b -> 10
 
 # ------------------------------------------------------------------
 
@@ -37,10 +37,7 @@ d = 123
 
 
 def display():
-    # d = 10
-
     def show():
-        # d = 15
         print(d)  # find local and then out and then global
     show()
 

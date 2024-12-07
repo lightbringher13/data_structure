@@ -16,8 +16,9 @@ print(tuple1[2:])
 # tuple support duplcate
 tuple1 = (11, 11, 2, 2, 34, 22, 12, 23, 34, 34, 435)
 
-# nested tuple
+# nested tuple important
 tuple3 = (tuple1, tuple2)
+print(tuple3)
 print(tuple3[1])
 
 # add tuple

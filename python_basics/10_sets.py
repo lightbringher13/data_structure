@@ -59,16 +59,16 @@ print(set1.symmetric_difference(set2))  # method can not do multiple
 # print(set1 ^ set2 ^ set3)
 # print(set1.symmetric_difference_update(set2))
 
-# isdisjoint() non intersection
+# isdisjoint() non intersection returns bool
 print(set1.isdisjoint(set2))
 print(set1.isdisjoint(["jen", "mo", "su"]))
 
-# # subset
+# # subset returns bool
 # print(set1.issubset(set2))
 # print(set1.issubset(["jen", "mo", "su"]))
 # print(set1 <= set2)
 
-# # superset every element is in superset
+# # superset every element is in superset returns bool
 # print(set1.issuperset(set2))
 # print(set1.issuperset(["jen", "mon", "ur"]))
 # print(set1 >= set2)
@@ -78,4 +78,4 @@ print(set1.isdisjoint(["jen", "mo", "su"]))
 
 # # delete set itself
 # del set2
-# print(set2)
+# print(set2) return error no set2

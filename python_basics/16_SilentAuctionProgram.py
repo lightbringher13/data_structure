@@ -12,7 +12,7 @@ def find_winner(bid):
     """Finds and prints the winner of the auction."""
     max_bid = 0
     winner = ""
-    for name, price in bid.items():
+    for name, price in bid.items():  # enumerate always default use index(0,1,2...)
         if price > max_bid:
             winner = name
             max_bid = price
