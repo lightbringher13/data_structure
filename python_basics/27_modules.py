@@ -1,5 +1,6 @@
 # modules ex) math, pandas...
 # why module? reusablility, organization
+# very large project should be divided.
 import math
 from my_module import QuizGame
 from my_module import *
