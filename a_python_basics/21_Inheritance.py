@@ -23,6 +23,8 @@ class Human:
 # can have own attributes, methods
 class Male(Human):
     # sub class own attribute
+    # when written own attribute
+    # must write super().__init__() to use super attributes
     def __init__(self, name, heart) -> None:
         super().__init__(heart)  # to access super attribute
         self.name = name

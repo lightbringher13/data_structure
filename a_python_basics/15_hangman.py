@@ -29,6 +29,8 @@ while lives > 0:
     else:
         # keep track of both index,element
         # store index, value as a tuple
+        # index points first element of the tuple
+        # letter points second element of the tuple
         for index, letter in enumerate(word):
             if letter == guessed_letter:
                 guess[index] = letter

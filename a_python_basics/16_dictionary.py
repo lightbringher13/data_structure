@@ -27,7 +27,7 @@ print(phone_no)
 print(phone_no["jen"])
 
 # selection using get()
-print(phone_no.get("riss"))
+print(phone_no.get("riss", None))
 
 # change the value
 phone_no["riss"] = "34"

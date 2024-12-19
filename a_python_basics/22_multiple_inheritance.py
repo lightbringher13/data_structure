@@ -19,6 +19,7 @@ class Human:
 class Male:
     def __init__(self, name) -> None:
         print("calling Male init")
+        super().__init__()  # for the future added class
         # no need for init method this is the last order
         self.name = name
 
@@ -38,7 +39,6 @@ class Boy(Human, Male):  # same method. follows order.
     def __init__(self, name, language, Num_heart) -> None:
         super().__init__(name, Num_heart)
         self.language = language
-        self.num_heart = Num_heart
 
     def sleep(self):
         print("i can sleep")

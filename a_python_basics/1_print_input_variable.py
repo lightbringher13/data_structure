@@ -22,7 +22,9 @@ print("i", "am", "riss", sep=" | ")
 print("Hey "+input("what is your name? ") + ", how are you?")
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# simple variable usage, variable == container
+# simple variable usage, variable == pointer
+# it points the address of the created object
+# very important
 name = input("print a number: ")
 print("hell", name)
 

@@ -61,6 +61,7 @@ print(56 >> 3)
 
 # identity operator
 a, b = 5, 5
+# id: shows memory address
 # is: same address and same value
 print(a is b)
 print(id(a) == id(b))

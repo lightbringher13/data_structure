@@ -1,6 +1,7 @@
 # encapsulation: hiding the internal details
 # use access modifiers: public, protected, pivate
 # best to use geter and setter
+# encapsule the private and protected with public
 class Student:
     def __init__(self, name, rollno, age):
         self.name = name

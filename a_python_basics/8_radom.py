@@ -21,6 +21,9 @@ l = [12, 3213, 56, 3, 7, 8, 9675, 3]
 a = random.choice(l)
 print(a)
 
+# random.choices() yes dupliicates
+# random.sample() no duplicates
+
 # mix the order of the list
 random.shuffle(l)
 print(l)
