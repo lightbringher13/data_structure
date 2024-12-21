@@ -1,4 +1,4 @@
-from a_queue import Queue
+from a0_queue import Queue
 
 
 def josephus_problem(n, k):
@@ -9,7 +9,7 @@ def josephus_problem(n, k):
     while len(q) > 1:
         for _ in range(int(k)-1):
             # make it circular append the deleted
-            q.enqueue(q.dequeue())
+            q.enqueue(q.dequeue())  # evaluate the arguement first
         removed = q.dequeue()
         print(f"removed = {removed}")
         q.display()

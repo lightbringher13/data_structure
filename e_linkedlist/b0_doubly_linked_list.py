@@ -10,82 +10,103 @@ class DoublyLinkedList:
         self.head = None
         self.tail = None
 
-    def insert_at_beginning(self, data):
+    def insert_at_the_beginning(self, data):
         new_node = Node(data)
         if self.head == None:
             self.head = self.tail = new_node
         else:
             new_node.next = self.head
             self.head.prev = new_node
-            new_node = self.head
+            self.head = new_node  # Update the head
 
     def insert_at_end(self, data):
         new_node = Node(data)
         if self.tail == None:
-            self.head = self.tail = new_node
+            self.head = self.tail = new_node  # Properly initialize the list
         else:
-            self.tail.next = new_node
             new_node.prev = self.tail
-            self.tail = new_node
-
-    def insert_after(self, node, data):
-        if not node:
-            print("node is not valid")
-            return None
-        new_node = Node(data)
-        new_node.prev = node
-        new_node.nex = node.next
-        if node.next:
-            node.next.prev = new_node
-        node.next = new_node
-        if node == self.tail:
-            self.tail = new_node
+            self.tail.next = new_node
+            self.tail = new_node  # Update the tail
 
     def delete_by_value(self, data):
-        if self.head == None:
-            print("empty")
-            return
         current = self.head
-        while current and current.data != data:
+        while current and current.data != data:  # Traverse to find the node
             current = current.next
-        if current == self.head:
+        if current == None:
+            print("Value not found")
+            return
+        if current == self.head:  # Node to delete is the head
             self.head = current.next
             if self.head != None:
                 self.head.prev = None
-        elif current == self.tail:
-            self.tail = current.next
+        elif current == self.tail:  # Node to delete is the tail
+            self.tail = current.prev
             if self.tail != None:
                 self.tail.next = None
-        else:
+        else:  # Node to delete is in the middle
             current.prev.next = current.next
             current.next.prev = current.prev
-        current = None
+        current = None  # Clear the reference to the deleted node
 
     def traverse_forward(self):
         current = self.head
         while current:
-            print(current.data)
+            print(f"{current.data}", end=" -> ")
             current = current.next
+        print("None")
 
     def traverse_backward(self):
-        current = self.tail
+        current = self.tail  # Start from the tail
         while current:
-            print(current.data)
+            print(f"{current.data}", end=" -> ")
             current = current.prev
+        print("None")
 
     def search(self, data):
         current = self.head
-        while current.next:
+        while current and current.data != data:  # Traverse to find the value
             current = current.next
-        if current.next:
-            return True
+        if current == None:
+            print("Value not found")
+            return None
         else:
-            return False
+            print(f"Value found: {current.data}")
+            return current
 
     def length(self):
         count = 0
         current = self.head
-        while current:
+        while current:  # Traverse to count the nodes
+            count += 1
             current = current.next
-            count = count + 1
         return count
+
+
+if __name__ == "__main__":
+    dll = DoublyLinkedList()
+
+    # Insert at the beginning
+    dll.insert_at_the_beginning(10)
+    dll.insert_at_the_beginning(20)
+    dll.insert_at_the_beginning(30)
+
+    # Insert at the end
+    dll.insert_at_end(40)
+    dll.insert_at_end(50)
+
+    # Forward traversal
+    dll.traverse_forward()  # Output: 30 -> 20 -> 10 -> 40 -> 50 -> None
+
+    # Backward traversal
+    dll.traverse_backward()  # Output: 50 -> 40 -> 10 -> 20 -> 30 -> None
+
+    # Delete a value
+    dll.delete_by_value(10)
+    dll.traverse_forward()  # Output: 30 -> 20 -> 40 -> 50 -> None
+
+    # Search for a value
+    dll.search(20)  # Output: Value found: 20
+    dll.search(60)  # Output: Value not found
+
+    # Length of the list
+    print(dll.length())  # Output: 4
