@@ -24,3 +24,14 @@ class Queue:
 
     def display(self):
         print(self.items)
+
+    def __getitem__(self, index):
+        return self.items[index]
+
+
+if __name__ == "__main__":
+    q = Queue()
+    for i in range(10):
+        q.enqueue(i)
+    q.dequeue()
+    print(q[0])
