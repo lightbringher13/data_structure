@@ -1,3 +1,18 @@
+"""
+Heap: every parent node >= its child node
+No None node fill left
+
+insert, find_max, delete_max
+
+insert: O(logn)
+find_max: O(1)
+delete_max: O(logn)
+make_heap: O(n)
+heapify_down: O(logn)
+heapify_up: O(logn)
+"""
+
+
 class MaxHeap:
     def __init__(self):
         self.heap = []
