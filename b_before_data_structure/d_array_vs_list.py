@@ -28,7 +28,7 @@ a.append(12)
 print(sys.getsizeof(a))
 
 
-# sequetial data structure d_sequential_data_structure.png
+# linear data structure d_sequential_data_structure.png
 # array, list
 # stack, queue,dequeue
 # stack: LIFO Last In First Out
@@ -36,3 +36,7 @@ print(sys.getsizeof(a))
 # dequeue: stack + queue
 # linked list: link the not connected node
 # can search the item using index
+# non - linear data structure
+# tree, graph
+# hash based structure
+# hash table
