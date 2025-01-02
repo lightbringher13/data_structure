@@ -9,6 +9,7 @@ print(type(set2))
 # does not have index
 # sets are unordered collections
 # but mutable  can add,remove, modify
+# Duplicate values are automatically removed.
 set3 = set()
 print(type(set3))
 
