@@ -13,6 +13,7 @@ a = random.random()
 print(a)
 
 # uniform() float number from range
+# 1.0 <= x <= 5.0
 a = random.uniform(1, 5)
 print(a)
 
