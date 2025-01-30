@@ -7,6 +7,8 @@ print(type(var_2))
 print(type(var_2 + var_1))
 
 # print hexadecimal(16), octal(8), binary(2)
+# hexadecimal: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+# A(10), B(11), C(12), D(13), E(14), F(15)
 var_1 = 0o123
 var_2 = 0x123
 var_3 = 0b1110
