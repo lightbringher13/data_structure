@@ -40,6 +40,7 @@ greet("rome", "HR", 23)
 
 
 # arbitrary arguements
+# print_numbers(*numbers): Unpacks the list and passes each element as an argument
 def add(*numbers):  # tuple (5,7,9)
     c = 0
     for i in numbers:
