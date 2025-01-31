@@ -45,3 +45,37 @@ class Car(Vehicle):
 
 # can not instantiate abtract class
 # v = Vehicle()
+
+
+class Payment(ABC):
+    @abstractmethod
+    def pay(self):
+        pass
+
+
+class CreditCardPayment(Payment):
+    def pay(self):
+        return "Processing credit card payment..."
+
+
+class PayPalPayment(Payment):
+    def pay(self):
+        return "Processing PayPal payment..."
+
+
+class CryptoPayment(Payment):
+    def pay(self):
+        return "Processing crypto payment..."
+
+
+# User doesn't need to know details, just calls pay()
+payment = CreditCardPayment()
+print(payment.pay())  # ✅ Processing credit card payment!
+
+"""
+🟢 Benefits
+
+✅ Hides different payment processing details.
+✅ User only interacts with pay() method, regardless of payment type.
+✅ Easier to extend (add new payment methods later).
+"""
