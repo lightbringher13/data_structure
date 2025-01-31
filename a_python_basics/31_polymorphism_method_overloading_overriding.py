@@ -1,5 +1,6 @@
 # method overloading
-# does not support overloading find the last one
+# does not support naturally overloading
+# same method name, different signatures find the last one
 # but you can use default arguement
 # compile time
 class Demo:
