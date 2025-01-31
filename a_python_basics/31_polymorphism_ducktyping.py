@@ -2,6 +2,7 @@
 # ducktyping, opeartor overloading
 # method overloading, method overriding
 # ducktyping: method is more important. find method first
+# does not care about the type
 # “If it looks like a duck, swims like a duck
 # and quacks like a duck, then it probably is a duck.”
 def square(x):
