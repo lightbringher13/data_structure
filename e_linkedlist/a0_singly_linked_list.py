@@ -13,99 +13,103 @@ class Node:
 
 class SinglyLinkedList:
     def __init__(self):
-        self.head = Node()  # Dummy node as the head
+        self.head = Node()  # Dummy head node
+        self.tail = Node()  # Dummy tail node
+        self.head.next = self.tail  # Head points to tail initially
 
-    def insert_at_beginning(self, value):
-        """Insert a new node at the beginning."""
+    def insert_front(self, value):
+        """Inserts a new node at the beginning (after dummy head)."""
         new_node = Node(value)
         new_node.next = self.head.next
         self.head.next = new_node
 
-    def insert_at_end(self, value):
-        """Insert a new node at the end."""
+    def insert_last(self, value):
+        """Inserts a new node at the end (before dummy tail)."""
         new_node = Node(value)
         current = self.head
-        while current.next:  # Traverse to the last node
+
+        while current.next != self.tail:  # Find the last real node
             current = current.next
+
         current.next = new_node
+        new_node.next = self.tail  # Ensure new node points to dummy tail
+
+    def search(self, value):
+        """Searches for a node with the given value."""
+        current = self.head.next  # Start from first real node
+        while current != self.tail:
+            if current.data == value:
+                return current  # Found the node
+            current = current.next
+        return None  # Not found
 
     def delete_by_value(self, value):
-        """Delete the first node with the specified value."""
-        current = self.head  # Start from the dummy node
-        while current.next and current.next.data != value:
-            current = current.next
-        if current.next:  # Found the node to delete
-            current.next = current.next.next
-        else:
-            print(f"Value {value} not found")
+        """Deletes the first node with the given value."""
+        prev = self.head
+        current = self.head.next
+
+        while current != self.tail:  # Traverse until dummy tail
+            if current.data == value:  # Found the node to delete
+                prev.next = current.next  # Remove node by skipping it
+
+                # If the deleted node was the last real node, ensure it points to the tail
+                if current.next == self.tail:
+                    prev.next = self.tail  # Ensure last real node points to dummy tail
+
+                return  # Exit after deleting the first occurrence
+
+            prev, current = current, current.next
+
+        print("No value found")  # Value not in the list
 
     def traverse(self):
-        """Traverse and print all the nodes in the list."""
-        current = self.head.next  # Skip the dummy node
-        while current:
+        """Prints all elements in the linked list."""
+        current = self.head.next
+        while current != self.tail:
             print(current.data, end=" -> ")
             current = current.next
         print("None")
 
-    def search(self, key):
-        """Search for a node with the specified key."""
-        current = self.head.next  # Skip the dummy node
-        while current:
-            if current.data == key:
-                print(f"Value found: {key}")
-                return current
+    def iter(self):
+        """Returns an iterator for the linked list."""
+        current = self.head.next
+        while current != self.tail:
+            yield current.data  # Yield each node's data
             current = current.next
-        print(f"Value {key} not found")
-        return None
 
     def length(self):
-        """Return the number of real nodes in the list."""
+        """Returns the number of real nodes in the list (without using a size variable)."""
         count = 0
-        current = self.head.next  # Skip the dummy node
-        while current:
+        current = self.head.next
+        while current != self.tail:
             count += 1
             current = current.next
         return count
 
-    def __iter__(self):
-        """Make the list iterable."""
-        current = self.head.next  # Skip the dummy node
-        while current:
-            yield current.data  # Yield the data of the current node
-            current = current.next
-
 
 if __name__ == "__main__":
-    sll = SinglyLinkedList()
+    # ✅ Example Usage
+    ll = SinglyLinkedList()
+    ll.insert_front(10)
+    ll.insert_front(20)
+    ll.insert_last(30)
+    ll.insert_last(40)
 
-    # Insert at the beginning
-    sll.insert_at_beginning(10)
-    sll.insert_at_beginning(20)
-    sll.insert_at_beginning(30)
+    print("\nBefore Deletion:")
+    ll.traverse()  # Expected: 20 -> 10 -> 30 -> 40 -> None
 
-    # Insert at the end
-    sll.insert_at_end(40)
-    sll.insert_at_end(50)
+    ll.delete_by_value(10)
+    print("\nAfter Deleting 10:")
+    ll.traverse()  # Expected: 20 -> 30 -> 40 -> None
 
-    # Traverse the list
-    print("List contents:")
-    sll.traverse()  # Output: 30 -> 20 -> 10 -> 40 -> 50 -> None
+    ll.delete_by_value(40)
+    print("\nAfter Deleting 40 (last real node):")
+    ll.traverse()  # Expected: 20 -> 30 -> None
 
-    # Search for a value
-    sll.search(20)  # Output: Value found: 20
-    sll.search(60)  # Output: Value 60 not found
+    ll.delete_by_value(99)  # Expected: No value found
 
-    # Delete a value
-    sll.delete_by_value(10)
-    print("List after deleting 10:")
-    sll.traverse()  # Output: 30 -> 20 -> 40 -> 50 -> None
+    print("\nFinal Length:", ll.length())  # Expected: 2
 
-    # Get the length of the list
-    # Output: Length of the list: 4
-    print(f"Length of the list: {sll.length()}")
-
-    # Iterate through the list using the generator
-    print("Iterating through the list:")
-    for value in sll:
-        print(value, end=" -> ")
-    print("None")
+    print("\nIterating through list:")
+    for value in ll.iter():
+        print(value, end=" ")  # Expected: 20 30
