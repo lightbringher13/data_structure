@@ -15,7 +15,7 @@
 
 # collison resolution method
 # key -> hash function -> index
-# -> if collison -> collison resolution method
+# -> if collison -> cluseter -> collison resolution method
 # open addressing: linear probing, quadratic probing,
 # double hashing
 
