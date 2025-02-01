@@ -1,4 +1,5 @@
 """
+binary tree: https://www.youtube.com/watch?v=LnxEBW29DOw
 binary tree: each node has max 2 or min 0 node
 node, link == edge, root node, child node, parent node
 path length: num of edges
