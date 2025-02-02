@@ -89,6 +89,29 @@ def info(**info):
 
 info(name="riss", age=23, dept="CS")
 
+
+# * can unpack elements from lists/tuples
+
+
+def add(x, y, z):
+    return x + y + z
+
+
+nums = [1, 2, 3]
+print(add(*nums))  # Equivalent to add(1, 2, 3)
+
+
+# ** can unpack dictionaries.
+
+
+def display_info(name, age):
+    print(f"Name: {name}, Age: {age}")
+
+
+person = {"name": "Alice", "age": 30}
+display_info(**person)  # Equivalent to display_info(name="Alice", age=30)
+
+
 # assignment
 
 
